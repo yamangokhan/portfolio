@@ -126,6 +126,11 @@ test.describe('Certificates', () => {
 
 test.describe('Analytics', () => {
   test('sends nothing to third parties while not configured, but still records events', async ({ page, portfolio }) => {
+    await page.route('**/i18n.js', async (route) => {
+      const res = await route.fetch();
+      await route.fulfill({ response: res, body: `${await res.text()}
+window.SITE.goatcounter = '';` });
+    });
     const thirdParty: string[] = [];
     page.on('request', (r) => { if (r.url().includes('goatcounter') || r.url().includes('gc.zgo.at')) thirdParty.push(r.url()); });
     await portfolio.open();

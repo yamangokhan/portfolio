@@ -7,7 +7,7 @@ window.SITE = {
   repo: 'https://github.com/yamangokhan/portfolio',
   cv: 'Gokhan_Yaman_CV.pdf',
   /** GoatCounter kodu (ör. 'gokhanyaman' → gokhanyaman.goatcounter.com). Boşsa sayaç yüklenmez. */
-  goatcounter: '',
+  goatcounter: 'gokhanyaman',
   url: 'https://gokhanyaman.netlify.app/'
 };
 

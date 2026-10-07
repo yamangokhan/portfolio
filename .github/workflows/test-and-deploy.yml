@@ -1,0 +1,53 @@
+name: Test & Deploy
+
+on:
+  push:
+    branches: [main, master]
+  schedule:
+    - cron: '0 5 * * *'   # her gün 08:00 (TR)
+  workflow_dispatch:
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  test-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+
+      - name: TypeScript tip kontrolü
+        run: npm run typecheck
+
+      - name: Playwright testleri
+        id: tests
+        continue-on-error: true
+        run: npx playwright test
+
+      - name: Raporu ve test durumunu siteye ekle
+        if: always()
+        run: |
+          rm -rf site/report
+          cp -r playwright-report site/report
+          node scripts/write-status.mjs || true
+
+      - name: Netlify'a deploy
+        if: always()
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+        run: npx --yes netlify-cli@17 deploy --dir=site --prod --message "CI ${GITHUB_SHA::7}"
+
+      - name: Testler başarısızsa işi kırmızıya çevir
+        if: steps.tests.outcome == 'failure'
+        run: exit 1

@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gökhan Yaman — Test Otomasyon Mühendisi</title>
+  <meta name="description" content="ISTQB sertifikalı Senior Software Test Automation Engineer. Selenium, Cucumber, REST Assured ve CI/CD ile bir haftalık regresyonu tek geceye indiren test altyapıları.">
+  <link rel="canonical" href="https://gokhanyaman.netlify.app/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gokhanyaman.netlify.app/">
+  <meta property="og:title" content="Gökhan Yaman — Test Automation Engineer">
+  <meta property="og:description" content="Bu portföy kendini test ediyor. İçinde 5 bug saklı — bulabilir misin?">
+  <meta property="og:image" content="https://gokhanyaman.netlify.app/gokhan.jpg">
+  <meta name="twitter:card" content="summary">
+  <meta name="theme-color" content="#0b0f14">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;700&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="lab.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Gökhan Yaman",
+    "jobTitle": "Senior Software Test Automation Engineer",
+    "url": "https://gokhanyaman.netlify.app/",
+    "image": "https://gokhanyaman.netlify.app/gokhan.jpg",
+    "address": { "@type": "PostalAddress", "addressLocality": "Eskişehir", "addressCountry": "TR" },
+    "sameAs": ["https://www.linkedin.com/in/yamangokhan/", "https://github.com/yamangokhan"]
+  }
+  </script>
+  <script src="i18n.js" defer></script>
+  <script src="analytics.js" defer></script>
+  <script src="bughunt.js" defer></script>
+  <script src="app.js" defer></script>
+  <script src="extras.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">İçeriğe geç</a>
+
+  <header class="site-header">
+    <nav class="nav container" data-i18n-attr="aria-label:navLabel" aria-label="Ana menü">
+      <a class="brand" href="#home" aria-label="Gökhan Yaman">
+        <span class="brand-mark" aria-hidden="true">gy</span>
+        <span class="brand-text">gokhan<span class="accent">.</span>yaman<span class="muted">()</span></span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#approach" data-i18n="nav.approach">Yaklaşım</a></li>
+        <li><a href="#experience" data-i18n="nav.experience">Deneyim</a></li>
+        <li><a href="#projects" data-i18n="nav.projects">Projeler</a></li>
+        <li><a href="#skills" data-i18n="nav.skills">Yetenekler</a></li>
+        <li><a href="#certificates" data-i18n="nav.certs">Sertifikalar</a></li>
+        <li><a href="#contact" data-i18n="nav.contact">İletişim</a></li>
+      </ul>
+      <div class="nav-actions">
+        <div class="cov" id="cov" role="meter" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-i18n-attr="aria-label:lab.coverageLabel" aria-label="Sayfa coverage’ı">
+          <span class="cov-bar" aria-hidden="true"><i id="cov-fill"></i></span>
+          <span class="cov-text mono" id="cov-text" aria-hidden="true">cov 0%</span>
+        </div>
+        <button class="lang-toggle" id="lang-toggle" type="button">EN</button>
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+          <span class="bar" aria-hidden="true"></span><span class="bar" aria-hidden="true"></span><span class="bar" aria-hidden="true"></span>
+          <span class="sr-only" data-i18n="menu">Menü</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <div class="hero-bg" aria-hidden="true"><div class="scanline"></div></div>
+    <section id="home" class="hero container">
+      <div class="hero-intro">
+        <div class="hero-id">
+          <img class="avatar" src="gokhan.jpg" alt="Gökhan Yaman" width="96" height="96">
+          <div>
+            <p class="kicker" data-i18n="hero.kicker">Merhaba, ben</p>
+            <h1>Gökhan Yaman</h1>
+          </div>
+        </div>
+        <p class="hero-role mono" data-i18n="hero.role"></p>
+        <p class="hero-summary" data-i18n="hero.summary"></p>
+        <div class="looking" id="looking"></div>
+        <ul class="stats" id="stats"></ul>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#contact" data-track="cta-contact" data-i18n="hero.ctaContact">Benimle iletişime geç</a>
+          <a class="btn btn-ghost" href="Gokhan_Yaman_CV.pdf" download data-track="cv-download" data-i18n="hero.ctaCv">CV’yi indir</a>
+        </div>
+        <a class="status-badge" id="status-badge" data-state="loading">
+          <span class="dot" aria-hidden="true"></span>
+          <span class="status-text"></span>
+          <span class="status-time"></span>
+        </a>
+      </div>
+
+      <div class="hero-side">
+      <figure class="terminal" id="terminal">
+        <div class="terminal-bar" aria-hidden="true">
+          <span class="light"></span><span class="light"></span><span class="light"></span>
+          <span class="terminal-title mono" id="terminal-title">recruiter.feature</span>
+        </div>
+        <pre class="terminal-body mono"><code id="gherkin"></code></pre>
+        <figcaption class="sr-only" data-i18n="hero.terminalLabel"></figcaption>
+      </figure>
+      <div class="lab" role="group" aria-labelledby="lab-title">
+        <span class="lab-title" id="lab-title" data-i18n="lab.title">🧪 Oyna</span>
+        <button type="button" class="lab-btn" data-lab="terminal" data-track="lab-terminal"><span class="lab-icon mono" aria-hidden="true">&gt;_</span><span data-i18n="lab.terminal">Terminal</span></button>
+        <button type="button" class="lab-btn" data-lab="inspect" data-track="lab-inspect" aria-pressed="false"><span class="lab-icon" aria-hidden="true">⌖</span><span data-i18n="lab.inspect">Locator modu</span></button>
+        <button type="button" class="lab-btn" data-lab="hunt" data-track="lab-hunt"><span class="lab-icon" aria-hidden="true">🐞</span><span data-i18n="lab.hunt">Bug avı</span></button>
+        <button type="button" class="lab-btn lab-danger" data-lab="chaos" data-track="lab-chaos"><span class="lab-icon" aria-hidden="true">💥</span><span data-i18n="lab.chaos">Siteyi kır</span></button>
+      </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true"><div class="marquee-track" id="marquee"></div></div>
+
+    <section id="approach" class="section container">
+      <header class="section-head">
+        <p class="section-index mono">01</p>
+        <h2 data-i18n="approach.title">Nasıl çalışırım</h2>
+        <p class="section-sub" data-i18n="approach.sub"></p>
+      </header>
+      <div class="approach-grid" id="approach-grid"></div>
+    </section>
+
+    <section id="experience" class="section container">
+      <header class="section-head">
+        <p class="section-index mono">02</p>
+        <h2><span id="experience-title" data-bug="typo">Deneyim</span></h2>
+        <p class="section-sub" data-i18n="experience.sub"></p>
+      </header>
+      <div class="run" id="run"></div>
+    </section>
+
+    <section id="projects" class="section container">
+      <header class="section-head">
+        <p class="section-index mono">03</p>
+        <h2 data-i18n="projects.title">Projeler</h2>
+        <p class="section-sub" data-i18n="projects.sub"></p>
+      </header>
+      <div class="project-grid" id="project-grid"></div>
+    </section>
+
+    <section id="skills" class="section container">
+      <header class="section-head">
+        <p class="section-index mono">04</p>
+        <h2 data-i18n="skills.title">Yetenekler</h2>
+        <p class="section-sub" data-i18n="skills.sub"></p>
+      </header>
+      <div class="skill-grid" id="skill-grid"></div>
+    </section>
+
+    <section id="certificates" class="section container">
+      <header class="section-head">
+        <p class="section-index mono">05</p>
+        <h2 data-i18n="certs.title">Sertifikalar &amp; Eğitim</h2>
+        <p class="section-sub" data-i18n="certs.sub"></p>
+      </header>
+      <div class="cert-layout">
+        <ul class="cert-list" id="cert-list"></ul>
+        <div class="edu" id="edu"></div>
+      </div>
+    </section>
+
+    <section id="contact" class="section container">
+      <header class="section-head">
+        <p class="section-index mono">06</p>
+        <h2 data-i18n="contact.title">Birlikte çalışalım</h2>
+        <p class="section-sub" data-i18n="contact.sub"></p>
+      </header>
+      <div class="contact-layout">
+        <ul class="contact-links" id="contact-links"></ul>
+        <form class="contact-form" id="contact-form" name="contact" method="POST" action="/tesekkurler.html" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="contact">
+          <p class="hidden-field"><label>Bot <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+          <label class="field">
+            <span data-i18n="contact.name">Adın</span>
+            <input type="text" name="name" id="f-name" required autocomplete="name" maxlength="120">
+          </label>
+          <label class="field">
+            <span data-i18n="contact.email">E-posta adresin</span>
+            <input type="email" name="email" id="f-email" required autocomplete="email" maxlength="200">
+          </label>
+          <label class="field">
+            <span data-i18n="contact.message">Mesajın</span>
+            <textarea name="message" id="f-message" rows="5" required maxlength="4000"></textarea>
+          </label>
+          <button class="btn btn-primary" type="submit" data-i18n="contact.send">Gönder</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Gökhan Yaman</p>
+      <p class="mono footer-tested"><span class="accent" aria-hidden="true">✓</span> <span id="footer-tested"></span></p>
+      <p><a id="footer-source" href="#" data-i18n="footer.source">Kaynak kodu</a></p>
+    </div>
+  </footer>
+
+  <div class="bh" id="bh">
+    <div class="bh-panel" id="bh-panel" hidden>
+      <p class="bh-title" data-i18n="bh.title"></p>
+      <div class="bh-idle">
+        <p class="bh-desc" data-i18n="bh.descIdle"></p>
+        <div class="bh-actions">
+          <button type="button" class="btn-small btn-go" id="bh-start" data-i18n="bh.start">Avı başlat</button>
+        </div>
+      </div>
+      <div class="bh-live">
+        <p class="bh-desc" data-i18n="bh.desc"></p>
+        <ol class="bh-list" id="bh-list"></ol>
+        <p class="bh-hint" id="bh-hint" aria-live="polite"></p>
+        <div class="bh-actions">
+          <button type="button" class="btn-small" id="bh-hint-btn" data-i18n="bh.hint">İpucu</button>
+          <button type="button" class="btn-small btn-quiet" id="bh-reset" data-i18n="bh.stop">Avı bitir</button>
+        </div>
+      </div>
+    </div>
+    <button class="bh-pill" id="bh-pill" type="button" aria-expanded="false" aria-controls="bh-panel">
+      <span aria-hidden="true">🐞</span>
+      <span class="bh-label" data-i18n="bh.pill">Bug avı</span>
+      <span id="bh-count" class="mono">0/5</span>
+    </button>
+  </div>
+
+  <dialog class="bh-dialog" id="bh-dialog" aria-labelledby="bh-done-title">
+    <div class="confetti" aria-hidden="true"></div>
+    <h2 id="bh-done-title" data-i18n="bh.doneTitle"></h2>
+    <p id="bh-done-text"></p>
+    <div class="dialog-actions">
+      <a class="btn btn-primary" id="bh-share" target="_blank" rel="noopener" data-i18n="bh.share"></a>
+      <a class="btn btn-ghost" id="bh-write" data-i18n="bh.write"></a>
+      <button class="btn btn-quiet" type="button" id="bh-close" data-i18n="bh.close"></button>
+    </div>
+  </dialog>
+
+  <dialog class="term" id="term" data-i18n-attr="aria-label:lab.term.label" aria-label="Terminal">
+    <div class="terminal-bar">
+      <span class="light" aria-hidden="true"></span><span class="light" aria-hidden="true"></span><span class="light" aria-hidden="true"></span>
+      <span class="terminal-title mono">gokhan@portfolio: ~</span>
+      <button type="button" class="term-close" id="term-close" aria-label="Close">×</button>
+    </div>
+    <div class="term-out mono" id="term-out" role="log" aria-live="polite"></div>
+    <form class="term-form mono" id="term-form" autocomplete="off">
+      <label class="term-prompt" for="term-input">❯</label>
+      <input class="term-input" id="term-input" type="text" spellcheck="false" autocapitalize="off" data-i18n-attr="placeholder:lab.term.placeholder" placeholder="komut yaz — help">
+    </form>
+  </dialog>
+
+  <div class="ci" id="ci" hidden>
+    <p class="ci-head mono"><span class="ci-dot" aria-hidden="true"></span><span id="ci-title"></span></p>
+    <ol class="ci-lines mono" id="ci-lines"></ol>
+  </div>
+
+  <div class="inspect-box" id="inspect-box" hidden aria-hidden="true"></div>
+  <div class="inspect-label mono" id="inspect-label" hidden aria-hidden="true"></div>
+
+  <div class="toasts" id="toasts" role="status" aria-live="polite"></div>
+</body>
+</html>

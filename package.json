@@ -1,0 +1,23 @@
+{
+  "name": "gokhan-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Kendini test eden kişisel portföy — Gökhan Yaman",
+  "type": "module",
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "typecheck": "tsc",
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "status": "node scripts/write-status.mjs"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "@playwright/test": "1.57",
+    "@types/node": "^26.6.4",
+    "typescript": "^7.0.2"
+  },
+  "overrides": {
+    "playwright-core": "1.57.0"
+  }
+}

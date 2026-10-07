@@ -115,8 +115,11 @@ test.describe('Certificates', () => {
     await expect(list).toContainText('176f2472');
     await expect(list).toContainText('YÖK Veri Analizi Okulu');
     const proofs = list.locator('a.cert-proof');
-    await expect(proofs).toHaveCount(2);
-    for (const href of await proofs.evaluateAll((els) => els.map((a) => a.getAttribute('href') ?? ''))) {
+    await expect(proofs).toHaveCount(3);
+    // ISTQB belgesi Turkish Testing Board'un resmi doğrulama sayfasında (Diplomasafe)
+    await expect(list.locator('a.cert-proof[href^="https://app.diplomasafe.com/"]')).toHaveCount(1);
+    const hrefs = await proofs.evaluateAll((els) => els.map((a) => a.getAttribute('href') ?? ''));
+    for (const href of hrefs.filter((h) => !h.startsWith('http'))) {
       const res = await request.get(href);
       expect(res.status(), href).toBe(200);
       expect(res.headers()['content-type'], href).toMatch(/image\/jpeg|application\/pdf/);

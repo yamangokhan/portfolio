@@ -180,7 +180,7 @@ window.I18N = {
       sub: 'Hepsi geçti.',
       proof: 'Belgeyi gör ↗',
       items: [
-        { name: 'ISTQB Certified Tester Foundation Level (CTFL)', org: 'ISTQB', year: '2022' },
+        { name: 'ISTQB Certified Tester Foundation Level (CTFL)', org: 'ISTQB · Turkish Testing Board', year: '2022', proof: 'https://app.diplomasafe.com/en-US/diploma/d132ae838af66d0ca7214697ddf07f25d01590c13', track: 'istqb' },
         { name: 'Introduction to Playwright', org: 'Test Automation University · sertifika no 176f2472', year: '2026', proof: 'certs/tau-introduction-to-playwright.jpg' },
         { name: 'Yapay Zekâ ve Makine Öğrenmesi', org: 'YÖK Veri Analizi Okulu · Marmara Üniversitesi koordinasyonunda, ODTÜ, İTÜ ve Boğaziçi katkılarıyla', year: '2026', proof: 'certs/yok-yapay-zeka-makine-ogrenmesi.pdf' },
         { name: 'API Testing With RestAssured', org: 'Test Automation University', year: '' },
@@ -460,7 +460,7 @@ window.I18N = {
       sub: 'All passed.',
       proof: 'View certificate ↗',
       items: [
-        { name: 'ISTQB Certified Tester Foundation Level (CTFL)', org: 'ISTQB', year: '2022' },
+        { name: 'ISTQB Certified Tester Foundation Level (CTFL)', org: 'ISTQB · Turkish Testing Board', year: '2022', proof: 'https://app.diplomasafe.com/en-US/diploma/d132ae838af66d0ca7214697ddf07f25d01590c13', track: 'istqb' },
         { name: 'Introduction to Playwright', org: 'Test Automation University · certificate ID 176f2472', year: '2026', proof: 'certs/tau-introduction-to-playwright.jpg' },
         { name: 'Artificial Intelligence and Machine Learning', org: 'CoHE (YÖK) Data Analysis School · coordinated by Marmara University with METU, ITU and Boğaziçi University', year: '2026', proof: 'certs/yok-yapay-zeka-makine-ogrenmesi.pdf' },
         { name: 'API Testing With RestAssured', org: 'Test Automation University', year: '' },

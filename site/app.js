@@ -167,7 +167,7 @@
     document.getElementById('cert-list').innerHTML = c.items.map((it) => `
       <li class="cert reveal">
         <span class="pass mono">PASS</span>
-        <span class="cert-name">${esc(it.name)}<span class="cert-org">${esc(it.org)}</span>${it.proof ? `<a class="cert-proof" href="${esc(it.proof)}" target="_blank" rel="noopener" data-track="cert-${esc(it.proof.split('/').pop().split('.')[0])}">${esc(c.proof)}</a>` : ''}</span>
+        <span class="cert-name">${esc(it.name)}<span class="cert-org">${esc(it.org)}</span>${it.proof ? `<a class="cert-proof" href="${esc(it.proof)}" target="_blank" rel="noopener" data-track="cert-${esc(it.track || it.proof.split('/').pop().split('.')[0])}">${esc(c.proof)}</a>` : ''}</span>
         <span class="cert-year mono">${esc(it.year)}</span>
       </li>`).join('');
     const block = (title, rows) => `

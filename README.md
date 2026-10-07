@@ -2,7 +2,7 @@
 
 Statik site (`site/`), derleme adımı yok. Playwright testleri (`tests/`) siteyi masaüstü ve mobilde test eder;
 GitHub Actions her push'ta ve her gün testleri koşup sonucu `site/test-status.json` olarak siteye yazar ve Netlify'a deploy eder.
-Ana sayfadaki yeşil rozet bu dosyayı okur.
+Ana sayfadaki yeşil rozet bu dosyayı okur. Repodaki `site/test-status.json` bilerek boş (`{}`) bir yer tutucudur; gerçek sonucu ve `site/report/` raporunu yalnızca CI üretir — yerelde üretilen sonucu commit'leme.
 
 ## Yerelde çalıştırma
 
